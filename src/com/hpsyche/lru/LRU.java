@@ -45,7 +45,7 @@ public class LRU {
             addNodeToHead(newNode);
             ++size;
             if(size>capacity){
-                removeTailNode();
+                removeTailNode();   
                 cache.remove(key);
                 --size;
             }

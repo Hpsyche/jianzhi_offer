@@ -27,7 +27,12 @@ public class SomeString {
         return true;
     }
 
+//    public static void main(String[] args) {
+//        System.out.println(isIsomorphic("egg","add"));
+//    }
+
     public static void main(String[] args) {
-        System.out.println(isIsomorphic("egg","add"));
+        String str=new String("哈哈");
+        System.out.println(str.length());
     }
 }
