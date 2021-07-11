@@ -39,7 +39,7 @@ public class PrintMatrix {
             }
         }else{
             while (nowY<d){
-                list.add(matrix[b][nowY]);
+                list.add(matrix[a][nowY]);
                 nowY++;
             }
             while (nowX<c){

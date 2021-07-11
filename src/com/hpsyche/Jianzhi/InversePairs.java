@@ -1,5 +1,7 @@
 package com.hpsyche.Jianzhi;
 
+import org.junit.Test;
+
 /**
  * @author hpsyche
  * Create on 2020/2/27
@@ -10,6 +12,10 @@ public class InversePairs {
         if(array==null||array.length<2){
             return 0;
         }
+        int[] copy=new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            copy[i] = array[i];
+        }
         return sortProcess(array,0,array.length-1);
     }
 
@@ -17,7 +23,7 @@ public class InversePairs {
         if(L==R){
             return 0;
         }
-        int mid=L+((R-L)>>1);
+        int mid=(L+R)>>1;
         int left=sortProcess(array,L,mid);
         int right=sortProcess(array,mid+1,R);
         return left+right+merge(array,L,mid,R);
@@ -34,7 +40,7 @@ public class InversePairs {
             if(array[p1]>array[p2]){
                 count+=(mid-p1+1);
             }
-            resArr[point++]=array[p1]<array[p2]?array[p1++]:array[p2++];
+            resArr[point++]=array[p1]<=array[p2]?array[p1++]:array[p2++];
         }
         while (p1<=mid){
             resArr[point++]=array[p1++];
@@ -46,5 +52,11 @@ public class InversePairs {
             array[l+point]=resArr[point];
         }
         return count;
+    }
+
+    @Test
+    public void test1(){
+        int i = InversePairs(new int[]{1, 3, 2, 3, 1});
+        System.out.println(i);
     }
 }
